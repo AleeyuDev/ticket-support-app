@@ -1,11 +1,6 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "next.config.js",
-      "use": "@vercel/next"
-    }
-  ],
+
   "env": {
     "DATABASE_URL": "postgresql://Oxalee:npg_NaH8jsGeMT5W@ep-solitary-block-a6oh1oad-pooler.us-west-2.aws.neon.tech/ticket-db?sslmode=require",
     "AUTH_SECRET": "G/zEr0CDf/bX64m49rfznYMmdyvjyKvO5uNXzh4SfLg="
