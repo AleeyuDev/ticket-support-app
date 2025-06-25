@@ -6,6 +6,11 @@ import { getPriorityClass } from "@/utils/ui";
 import Link from "next/link";
 import CloseTicketButton from "@/components/CloseTicketButton";
 
+export const dynamic = "force-dynamic";
+
+// ...existing code...
+
+
 const TicketDetailsPage = async (props: {
   params: Promise<{ id: string }>;
 }) => {

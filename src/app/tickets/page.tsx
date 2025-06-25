@@ -5,6 +5,11 @@ import { redirect } from "next/navigation";
 
 import TicketItem from "@/components/TicketItem";
 
+export const dynamic = "force-dynamic";
+
+// ...existing code...
+
+
 const TicketsPage = async () => {
   const user = await getCurrentUser();
 

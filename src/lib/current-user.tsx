@@ -5,15 +5,17 @@ type AuthPayload = {
   userId: string;
 };
 
-// export const signAuthToken =  (payload: any ) => {}
+export const dynamic = "force-dynamic";
+
+// ...existing code...
 
 export const getCurrentUser = async () => {
   try {
     const token = await getAuthCookie();
     if (!token) return null;
-    const payload = (await verifyAuthToken(token)) as AuthPayload;
 
-    if (!payload?.userId) return null;
+    const payload = (await verifyAuthToken(token)) as AuthPayload | null;
+    if (!payload || !payload.userId) return null;
 
     const user = await prisma.user.findUnique({
       where: { id: payload.userId },
@@ -23,9 +25,11 @@ export const getCurrentUser = async () => {
         name: true,
       },
     });
+
+    if (!user) return null;
     return user;
   } catch (error) {
-    console.log("Error geting the current user ", error);
+    console.log("Error getting the current user", error);
     return null;
   }
 };

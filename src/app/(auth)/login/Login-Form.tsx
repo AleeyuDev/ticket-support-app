@@ -6,6 +6,11 @@ import { toast } from "sonner";
 import { loginUser } from "@/actions/auth.actions";
 import { useRouter } from "next/navigation";
 
+export const dynamic = "force-dynamic";
+
+// ...existing code...
+
+
 const LoginForm = () => {
   const router = useRouter();
 

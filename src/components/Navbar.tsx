@@ -2,6 +2,11 @@ import { getCurrentUser } from "@/lib/current-user";
 import Link from "next/link";
 import LogoutButton from "./LogoutButton";
 
+export const dynamic = "force-dynamic";
+
+// ...existing code...
+
+
 const Navbar = async () => {
   const user = await getCurrentUser();
   return (

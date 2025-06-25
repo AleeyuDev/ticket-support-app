@@ -5,6 +5,11 @@ import { logoutUser } from "@/actions/auth.actions";
 
 import { toast } from "sonner";
 
+
+export const dynamic = "force-dynamic";
+
+// ...existing code...
+
 const LogoutButton = () => {
   // const router = useRouter();
 

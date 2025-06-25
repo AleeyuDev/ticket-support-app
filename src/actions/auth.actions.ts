@@ -10,6 +10,10 @@ type ResponseResult = {
   message: string;
 };
 
+
+
+
+
 //  Register a new user
 
 export const registerUser = async (

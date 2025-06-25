@@ -3,6 +3,11 @@
 import { closeTicket } from "@/actions/ticket.actions";
 import { useActionState, useEffect } from "react";
 import { toast } from "sonner";
+export const dynamic = "force-dynamic";
+
+// ...existing code...
+
+
 const CloseTicketButton = ({
   ticketId,
   isClosed,

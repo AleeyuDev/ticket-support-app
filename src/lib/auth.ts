@@ -8,7 +8,10 @@ import { cookies } from "next/headers"
 const secret = new TextEncoder().encode(process.env.AUTH_SECRET)
 
 const cookieName: string = 'auth-token';
+ 
+export const dynamic = "force-dynamic";
 
+// ...existing code...
 
 export const signAuthToken = async (payload: any ) => {
 
