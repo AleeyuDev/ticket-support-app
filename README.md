@@ -48,7 +48,7 @@ Built with:
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/ticket-support-app.git
+git clone https://github.com/AleeyuDev/ticket-support-app.git
 cd ticket-support-app
 ```
 
@@ -96,30 +96,7 @@ Visit [http://localhost:3000](http://localhost:3000) to view the app.
 
 This project is ready for **Vercel** deployment.
 
-1. **Connect your repo to Vercel**.
-2. **Set environment variables** in the Vercel dashboard:
-   - `DATABASE_URL`
-   - `DATABASE_URL_UNPOOLED` (if needed)
-   - `AUTH_SECRET`
-   - `NEXT_PUBLIC_SENTRY_DSN`
-   - `SENTRY_AUTH_TOKEN`
-3. **Deploy!**
 
----
-
-## 🧩 Environment Variables
-
-See `.env.example` for all required variables.
-
-| Name                    | Description                        |
-|-------------------------|------------------------------------|
-| `DATABASE_URL`          | PostgreSQL connection string       |
-| `DATABASE_URL_UNPOOLED` | (Optional) Unpooled DB connection  |
-| `AUTH_SECRET`           | JWT secret for authentication      |
-| `NEXT_PUBLIC_SENTRY_DSN`| Sentry DSN for error monitoring    |
-| `SENTRY_AUTH_TOKEN`     | Sentry auth token                  |
-
----
 
 ## 🛡️ Security Best Practices
 
@@ -148,4 +125,4 @@ See `.env.example` for all required variables.
 
 ## 👤 Author
 
-- [AleeyuDev](https://github.com/aleeyudev)
+- [AleeyuDev](https://github.com/AleeyuDev)
