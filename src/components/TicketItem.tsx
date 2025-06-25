@@ -1,4 +1,4 @@
-import type { Ticket } from "@generated/prisma";
+import type { Ticket } from "@prisma/client";
 import Link from "next/link";
 import { getPriorityClass } from "@/utils/ui";
 
