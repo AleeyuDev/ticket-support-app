@@ -1,0 +1,184 @@
+model Ticket {
+    id          Int @id  default(autoIncrement())
+    subject     String 
+    description String 
+    priority    String
+    status      String  default("Open")
+    createdAt   DateTime @default( now())
+    updatedAt   DateTime @updatedAt
+} 
+
+
+
+run  the migration 
+
+
+we use npx  to run prisma  unless we install it globally 
+
+npx prisma migrate dev --name init ==> this will create table in our db
+
+npx prisma generate ==>  it will generate a clients 
+add this to package.json =>  postinstall: prisma generate ==> to generate a client on the
+ server or on the cloud    
+
+npx prisma studio ==>  its a tool that will show you all you tables and columns, rows    
+
+
+ oxalee neon db  pswad npg_NaH8jsGeMT5W
+DATABASE_URL="postgresql://Oxalee:npg_NaH8jsGeMT5W@ep-old-breeze-a65t9qf9-pooler.us-west-2.aws.neon.tech/ticket?sslmode=require"
+# uncomment next line if you use Prisma <5.10
+# DATABASE_URL_UNPOOLED="postgresql://Oxalee:npg_NaH8jsGeMT5W@ep-old-breeze-a65t9qf9.us-west-2.aws.neon.tech/ticket?sslmode=require"
+
+
+
+
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  name      String?
+  password  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  tickets Ticket[]
+}
+
+model Ticket {
+  id          Int      @id @default(autoincrement())
+  subject     String
+  description String
+  priority    String
+  status      String   @default("Open")
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  userId      String
+  user        User     @relation(fields: [userId], references: [id])
+}
+
+
+
+
+| Time     | Focus                                                  |
+| -------- | ------------------------------------------------------ |
+| Week 1–2 | IoT concepts + install Arduino IDE + Raspberry Pi OS   |
+| Week 3–4 | Build simple sensor-based projects                     |
+| Week 5–6 | Learn MQTT + send data to cloud                        |
+| Week 7–8 | Build full-stack dashboard                             |
+| Week 9+  | Work on a capstone project: e.g. Smart Home Controller |
+
+
+
+ 
+
+
+
+
+ getting stared  prisma with typescript 
+
+
+npm install typescript  ts-node @types/nodes -D
+
+npx tsc -init 
+
+npm i prisma 
+
+npx prisma studio  <GUI>
+
+
+npx prisma init  --datasource-provider  postgresql / sqlite
+
+
+
+
+npx prisma migrate   dev --name init 
+
+
+connect to the database seed
+
+import { PrismaClient } from '@prisma/client';
+
+
+const prisma   = new PrismaClient();
+
+
+async function main() {
+    // prisma queries
+
+
+
+}
+
+
+
+
+const users = await prisma.user.findMany({
+    include:{
+        articles: true
+    }
+})
+
+
+const users.forEach((user)=>{
+    console.log({`user:  ${user.name}    --- email ${user.email} `})
+    console.log(articles:)
+    user.articles.forEach((article)=> {
+        console.log(` title ${article.title}, --- body ${article.body} )
+    })
+    console.log('\n')
+})
+
+
+
+
+const article = await prisma.articles.create({
+    data: {
+        title: 'John',
+        body: 'John@dev.com',
+        author :{
+            connect:{
+                id: 1
+                
+            }
+        }
+    }
+})
+
+create article and associate them
+const user = await prisma.articles,create({
+    data: {
+        name: 'John',
+        email: 'John@dev.com',
+        article:{
+            create:{
+                title: 'nnn',
+                body: 'sss'
+
+            }
+        }
+    }
+})
+
+
+
+main().then(
+    async () => {
+        await prisma.$disconnect();
+    }
+).catch(
+     async (e) => {
+
+        console.log(e)
+        await  prisma.$disconnect()
+
+        process.exit(1)
+        
+    }
+)
+
+
+
+
+
+
+
+

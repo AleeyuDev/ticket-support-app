@@ -1,0 +1,85 @@
+# Node modules
+node_modules/
+
+# Build output
+.next/
+out/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Local env files
+.env*
+!.env.example
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# VSCode settings
+.vscode/
+
+# Coverage directory
+coverage/
+
+# Optional npm cache directory
+.npm/
+
+# Yarn cache
+.yarn/
+.yarnrc.yml
+
+# Output of 'next export'
+out/
+
+# Mac system files (already included, but for completeness)
+*.DS_Store
+
+# Windows system files (already included)
+ehthumbs.db
+Icon?
+Desktop.ini
+
+# IDE files
+.idea/
+*.swp
+
+# Test output
+jest-test-results.json
+
+# Next.js telemetry
+.next/telemetry
+
+# Prisma files
+prisma/dev.db
+prisma/dev.db-journal
+
+# VSCode settings (already included)
+.vscode/
+
+# Log files
+*.log
+
+# Coverage directory (already included)
+coverage/
+
+# SASS cache (already included)
+.sass-cache/
+
+# Typescript cache (already included)
+*.tsbuildinfo
+
+# Misc
+*.tgz
+*.zip
+
+# Local environment files (already included)
+.env*
+!.env.example
+
+# Ignore vercel build output (if using Vercel CLI locally)
+.vercel/
+.text.txt
