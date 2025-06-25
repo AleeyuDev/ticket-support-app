@@ -55,6 +55,12 @@ export const registerUser = async (
 
     // sign and set auth token
     const token = await signAuthToken({ userId: user.id });
+    if (!token) {
+      return {
+        success: false,
+        message: "Failed to generate authentication token.",
+      };
+    }
     await setAuthCookie(token);
 
     //   logEvent(`User registered successfully:` , 'auth', {userId: user.id, email}, 'info')
@@ -123,7 +129,14 @@ export const loginUser = async (
       return { success: false, message: "Invalid email or Password " };
     }
 
+
     const token = await signAuthToken({ userId: user.id });
+    if (!token) {
+      return {
+        success: false,
+        message: "Failed to generate authentication token.",
+      };
+    }
     await setAuthCookie(token);
 
     return { success: true, message: "login successfully" };
